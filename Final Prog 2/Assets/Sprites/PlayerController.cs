@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class PlayerController : MonoBehaviour
     public float forceScale;
 
     public float jumpHeight;
+
+    public bool canJump;
+    
+    public GrapplingHook grapplingHook;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +31,25 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.right * forceScale, ForceMode2D.Force);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+
+        if (canJump)
         {
-            rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            }
         }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        canJump = true;
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        canJump = false;
     }
 }
