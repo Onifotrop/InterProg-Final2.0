@@ -7,7 +7,6 @@ public class MouseManager : MonoBehaviour
 {
     //public Camera mainCam;
     //public float rayLen;
-
     // public NoteManager notManager;
     // Start is called before the first frame update
     public PlayerController playController;
@@ -21,6 +20,7 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Below was first used for mouse detection, but I used easier way to do that.
         //Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         //Debug.DrawRay(ray.origin,ray.direction * rayLen, Color.red);
         //RaycastHit hit;
@@ -33,19 +33,13 @@ public class MouseManager : MonoBehaviour
 //                {
 //                    Debug.Log("It's a box");
 //                }
-//                else if (hit.collider.tag == "Sephere")
+//                else if (hit.collider.tag == "Sphere")
 //                {
-//                    Debug.Log("It's a Sephere");
+//                    Debug.Log("It's a Sphere");
 //                }
-          //      if(hit.collider.tag == "NoteBook Trigger")
-          //      {
-          //          Debug.Log("The Trigger");
-          //          //notManager.inPreview = true;
-          //      }
-          //    else
+        //    else
           //    {
           //        Debug.Log("some others");
-          //        //notManager.inPreview = false;
           //    }
             //}
           //else
@@ -61,16 +55,28 @@ public class MouseManager : MonoBehaviour
         {
             sR.color = Color.red;
         }
-        //Debug.Log("Grappling: " + other.tag);
+        //Detection for if the object can be dragged or grappled
         if (other.tag == "Gable")
         {
             Debug.Log("Grapple");
             grapplingHook.canGrapple = true;
-            sR.color = Color.blue;
+            grapplingHook.canDrag = false;
+            sR.color = Color.magenta;
+        }
+
+        else if (other.tag == "Dable")
+        {
+            grapplingHook.canDrag = true;
+            grapplingHook.canGrapple = false;
+            print(other.gameObject);
+            grapplingHook.objectPoint = other.gameObject;
+            grapplingHook.objectRB = other.gameObject.GetComponent<Rigidbody2D>();
+            
+            
         }
         else
         {
-            grapplingHook.canGrapple = false;
+            grapplingHook.canDrag = false;
             sR.color = Color.red;
         }
     }

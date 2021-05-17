@@ -19,14 +19,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Sprites/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Sprites/GrapplingHook.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Sprites/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Sprites/GrapplingHook.cs" />
       <option value="$PROJECT_DIR$/Assets/Sprites/MouseManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Sprites/Objects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Sprites/GrapplingHook.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnPoint.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sSLUYxjgwNJ1kpwl8X7HmfUE1k" />
@@ -73,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1620861063573</updated>
       <workItem from="1620861071729" duration="2744000" />
-      <workItem from="1621055065122" duration="6048000" />
+      <workItem from="1621055065122" duration="6662000" />
+      <workItem from="1621221761432" duration="11206000" />
     </task>
     <servers />
   </component>
